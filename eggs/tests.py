@@ -23,4 +23,19 @@ class EggsTests(TestCase):
         self.assertEqual(actual_name, "rake")
         self.assertEqual(actual_description, "Better for collecting leaves than shovel.")
 
+    def test_empty_description(self):
+        # Test if an Eggs object can be created without providing a description
+        testuser2 = get_user_model().objects.create_user(username='testuser2', password='pass')
+        testuser2.save()
+
+        test_eggs_no_description = Eggs.objects.create(name="shovel", owner=testuser2)
+        test_eggs_no_description.save()
+
+        eggs_no_description = Eggs.objects.get(id=2)
+        actual_owner_no_description = str(eggs_no_description.owner)
+        actual_name_no_description = str(eggs_no_description.name)
+        actual_description_no_description = str(eggs_no_description.description)
+        self.assertEqual(actual_owner_no_description, "testuser2")
+        self.assertEqual(actual_name_no_description, "shovel")
+        self.assertEqual(actual_description_no_description, "")  # Empty description should be handled correctly
 # Create your tests here.
