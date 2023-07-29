@@ -5,6 +5,7 @@ Run test python3 manage.py test
 pip3 install: 
 django
 djangorestframework
+docker
 
 Setting up virtual environment python3 -m venv .venv
 

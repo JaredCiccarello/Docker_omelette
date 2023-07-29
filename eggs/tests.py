@@ -34,7 +34,11 @@ class EggsTests(TestCase):
         eggs_no_description = Eggs.objects.get(id=2)
         actual_owner_no_description = str(eggs_no_description.owner)
         actual_name_no_description = str(eggs_no_description.name)
-        actual_description_no_description = str(eggs_no_description.description)
+        actual_description_no_description = str(eggs_no_What are the key components and purpose of Django Rest Framework (DRF) permissions, and how do they help in securing an API?
+
+In SQL, what is the purpose of the SELECT statement, and how would you use it to retrieve all columns from a table called ‘employees’?
+
+Can you explain the role of DRF Generic Views and provide examples of their usage in building a RESTful API?description.description)
         self.assertEqual(actual_owner_no_description, "testuser2")
         self.assertEqual(actual_name_no_description, "shovel")
         self.assertEqual(actual_description_no_description, "")  # Empty description should be handled correctly

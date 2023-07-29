@@ -19,5 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/mainprofile/', include('omelette.urls')),
+    path('api/v1/mainprofile/', include('eggs.urls')),
 ]
+
+# Changing omelette to eggs, fixed the recursion error
